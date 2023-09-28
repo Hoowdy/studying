@@ -65,9 +65,6 @@ if __name__ == "__main__":
                 with open(name.format(f"({counter})"), "w", encoding="utf-8") as file:
                     index = print_ascii_table(file)
                     sys.exit(index)
-            case _:
-                print(f"Unknown option: {arg}")
-                sys.exit(0xff)
 
     print("File name were not provided.")
     print("Use -h flag to get help.")
