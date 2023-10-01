@@ -2,7 +2,6 @@ import getopt
 import os
 import sys
 
-
 def print_ascii_table(file = None, columns = 16, start = 32):
     res = ''
     max = 255
@@ -22,11 +21,7 @@ def print_ascii_table(file = None, columns = 16, start = 32):
             j += 1
         res += ("\n")
         i += 1
-        j = 0
-    res += ("Laba 2 \"Ascii table\" © 2023 Nikita Kostyr")
-    # if file is not None:
-    #     file.write(res)
-    # else:
+    res += ("\nLaba 2 \"Ascii table\" © 2023 Nikita Kostyr")
     print(res, file= file)
     return 0
 
@@ -63,11 +58,11 @@ if __name__ == "__main__":
                 if counter == 0:
                     name = arg.split(".")[0] + ".txt"
                 with open(name.format(f"({counter})"), "w", encoding="utf-8") as file:
-                    index = print_ascii_table(file)
-                    sys.exit(index)
+                    ret = print_ascii_table(file)
+                    sys.exit(ret)
 
     print("File name were not provided.")
     print("Use -h flag to get help.")
     print("\nPrinting table to console:")
-    index = print_ascii_table()
-    sys.exit(index)
+    ret = print_ascii_table()
+    sys.exit(ret)
